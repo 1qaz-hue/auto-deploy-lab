@@ -18,6 +18,8 @@ jobs:
           username: ${{ secrets.SSH_USER_NAME }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh_options: "-o StrictHostKeyChecking=no"
           source: "./html/*"
           target: "/var/www/html"
           strip_components: 1
+          command_timeout: 10m
